@@ -12,30 +12,48 @@
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-<!-- Particles.js CDN -->
+<!-- Particle.js CDN -->
 <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
 <style>
-/* Glass cards and gradient buttons */
-.social-btn { @apply px-6 py-3 rounded-xl text-white font-bold text-lg hover:scale-105 hover:shadow-xl transition transform flex justify-center items-center; }
+/* Social buttons with glow */
+.social-btn {
+  @apply px-8 py-4 rounded-xl text-white font-bold text-lg hover:scale-105 hover:shadow-xl transition transform flex justify-center items-center;
+}
 .social-btn:hover { box-shadow: 0 0 20px rgba(0,255,200,0.6), 0 0 40px rgba(0,200,255,0.4); }
 
-.mission-item { @apply mb-3 p-6 rounded-xl bg-black/50 backdrop-blur-md shadow-lg transition transform cursor-default; }
+/* Pulse animations for buttons */
+@keyframes pulse1 {0%,100%{transform:scale(1);opacity:0.3}50%{transform:scale(1.05);opacity:0.6}}
+.animate-pulse-slow { animation: pulse1 8s ease-in-out infinite; }
+
+/* Glassmorphism cards for mission */
+.mission-item {
+  @apply mb-3 p-6 rounded-xl bg-black/50 backdrop-blur-md shadow-lg transition transform cursor-default;
+}
 .mission-item:hover { @apply scale-105; }
 
+/* Section titles & text */
 .section-title { @apply text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-green-500; }
 .section-text { @apply text-lg md:text-xl text-gray-300 mb-6; }
 
+/* Modal backdrop & content */
 #formModal { backdrop-filter: blur(6px); }
 
-.hero-bg { background: linear-gradient(270deg, #0AB6BC, #045C43, #021B23); background-size: 600% 600%; animation: gradientShift 25s ease infinite; }
-@keyframes gradientShift {0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+/* Animated hero gradient */
+@keyframes gradientShift {
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+.hero-bg {
+  background: linear-gradient(270deg, #0AB6BC, #045C43, #021B23);
+  background-size: 600% 600%;
+  animation: gradientShift 25s ease infinite;
+}
 
+/* Floating bar animation */
 @keyframes fadeIn {0% { opacity:0; transform:translateY(20px);} 100% {opacity:1; transform:translateY(0);}}
 .animate-fade-in { animation: fadeIn 1s forwards; }
-
-@keyframes pulse1 {0%,100%{transform:scale(1);opacity:0.3}50%{transform:scale(1.05);opacity:0.6}}
-.animate-pulse-slow { animation: pulse1 8s ease-in-out infinite; }
 </style>
 </head>
 
@@ -67,7 +85,13 @@
 <section class="h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden hero-bg">
   <div id="particles-js" class="absolute inset-0 -z-20"></div>
   <h1 class="text-4xl md:text-6xl font-bold mb-4" data-aos="fade-up">Join the Gulab Seva Mission</h1>
-  <p class="text-lg md:text-2xl mb-8 text-gray-200" data-aos="fade-up" data-aos-delay="200">Follow us and be part of our 2 Crore Member Movement</p>
+  <p class="text-lg md:text-2xl mb-8 text-gray-200" data-aos="fade-up" data-aos-delay="200">
+    What if tomorrow you lost everything — who would stand by you?<br>
+    Millions in India face this reality: orphans with no home, elderly with no family, youth without jobs, and families sleeping on streets.
+  </p>
+  <p class="text-lg md:text-2xl mb-8 text-gray-200" data-aos="fade-up" data-aos-delay="300">
+    Now, something powerful has begun — The Gulab Seva Foundation. Join the first 2 crore people to receive their official GSF ID and priority access to all future benefits.
+  </p>
   <div class="flex flex-col md:flex-row gap-6 justify-center items-center mt-8 relative animate-pulse-slow" data-aos="zoom-in" data-aos-delay="400">
     <a href="https://instagram.com/gulabsevafoundation" target="_blank" class="social-btn">Instagram</a>
     <a href="https://whatsapp.com/channel/0029VbAqhEcHgZWdrnsEjy0C" target="_blank" class="social-btn">WhatsApp</a>
@@ -80,43 +104,55 @@
   </div>
 </section>
 
-<!-- Mission / Emotional Content Section -->
+<!-- About / Mission / Vision / What We Do Sections -->
 <section class="py-16 px-6 max-w-6xl mx-auto text-center">
-  <h2 class="section-title" data-aos="fade-up">What if tomorrow you lost everything — who would stand by you?</h2>
-  <p class="section-text mt-4 text-lg md:text-xl" data-aos="fade-up" data-aos-delay="100">
-    Right now, millions in India are facing that exact reality:
-  </p>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-    <div class="mission-item" data-aos="fade-up" data-aos-delay="200"><div class="text-2xl mb-2">🔸</div><h3 class="text-xl font-bold mb-1">Orphans with no home</h3></div>
-    <div class="mission-item" data-aos="fade-up" data-aos-delay="300"><div class="text-2xl mb-2">🔸</div><h3 class="text-xl font-bold mb-1">Elderly with no family</h3></div>
-    <div class="mission-item" data-aos="fade-up" data-aos-delay="400"><div class="text-2xl mb-2">🔸</div><h3 class="text-xl font-bold mb-1">Youth with no job</h3></div>
-    <div class="mission-item" data-aos="fade-up" data-aos-delay="500"><div class="text-2xl mb-2">🔸</div><h3 class="text-xl font-bold mb-1">Families sleeping on roads with no shelter</h3></div>
-  </div>
 
-  <p class="section-text mt-12 text-lg md:text-xl" data-aos="fade-up" data-aos-delay="600">
-    But now, something powerful has begun — <span class="font-bold text-teal-400">The Gulab Seva Foundation</span>
+  <!-- About -->
+  <h2 class="section-title" data-aos="fade-right">About Gulab Seva Foundation</h2>
+  <p class="section-text" data-aos="fade-left" data-aos-delay="100">
+    Gulab Seva Foundation is dedicated to building a world where every person—whether jobless, orphaned, elderly, or in need—receives shelter, education, healthcare, and livelihood. Our vision: gather 2 crore followers who get priority access to all programs, building a self-sustaining society for all.
   </p>
 
+  <!-- Mission -->
+  <h2 class="section-title mt-12" data-aos="fade-right" data-aos-delay="200">Our Mission</h2>
+  <p class="section-text" data-aos="fade-left" data-aos-delay="300">
+    Eliminate poverty, unemployment, and lack of basic necessities by providing free homes, education, jobs, and healthcare. Empowering individuals and families to achieve stability and dignity.
+  </p>
+
+  <!-- Vision -->
+  <h2 class="section-title mt-12" data-aos="fade-right" data-aos-delay="400">Our Vision</h2>
+  <p class="section-text" data-aos="fade-left" data-aos-delay="500">
+    A world where no one sleeps hungry, every child is educated, and every individual lives with dignity. First 2 crore followers receive unique GSF IDs symbolizing trust, belonging, and priority access.
+  </p>
+
+  <!-- What We Do -->
+  <h2 class="section-title mt-12" data-aos="fade-right" data-aos-delay="600">What We Do</h2>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-    <div class="mission-item" data-aos="fade-up" data-aos-delay="700"><div class="text-4xl mb-2">🏠</div><h3 class="text-xl font-bold mb-1">Every person has a home</h3></div>
-    <div class="mission-item" data-aos="fade-up" data-aos-delay="800"><div class="text-4xl mb-2">🎓</div><h3 class="text-xl font-bold mb-1">Every child has a school</h3></div>
-    <div class="mission-item" data-aos="fade-up" data-aos-delay="900"><div class="text-4xl mb-2">👴</div><h3 class="text-xl font-bold mb-1">Every elder is respected</h3></div>
-    <div class="mission-item" data-aos="fade-up" data-aos-delay="1000"><div class="text-4xl mb-2">👨‍🔧</div><h3 class="text-xl font-bold mb-1">Every youth has a job</h3></div>
-    <div class="mission-item" data-aos="fade-up" data-aos-delay="1100"><div class="text-4xl mb-2">❤️</div><h3 class="text-xl font-bold mb-1">And no one is left behind</h3></div>
-  </div>
-
-  <p class="section-text mt-12 text-lg md:text-xl" data-aos="fade-up" data-aos-delay="1200">
-    🎯 We are inviting the first <span class="font-bold text-teal-400">2 Crore people</span> to join this movement — and receive their official <span class="font-bold text-green-400">GSF ID</span>, which guarantees priority access to all future benefits.
-  </p>
-
-  <p class="section-text mt-4 text-lg md:text-xl text-red-400 font-bold" data-aos="fade-up" data-aos-delay="1300">❌ No fees. ❌ No donations.</p>
-  <p class="section-text mt-2 text-lg md:text-xl text-green-400 font-bold" data-aos="fade-up" data-aos-delay="1400">✅ Just belief, unity, and humanity.</p>
-
-  <p class="section-text mt-8 text-lg md:text-xl" data-aos="fade-up" data-aos-delay="1500">🔔 If you believe in this mission:</p>
-  <div class="flex flex-col md:flex-row gap-4 justify-center items-center mt-4" data-aos="fade-up" data-aos-delay="1600">
-    <a href="https://instagram.com/gulabsevafoundation" target="_blank" class="social-btn">❤️ Follow @gulabsevafoundation</a>
-    <a href="https://whatsapp.com/channel/0029VbAqhEcHgZWdrnsEjy0C" target="_blank" class="social-btn">📤 Share this post</a>
-    <button id="openFormBtn2" class="social-btn">🎫 Get Your GSF ID</button>
+    <div class="mission-item" data-aos="fade-up" data-aos-delay="100">
+      <div class="text-teal-400 text-4xl mb-4">🏠</div>
+      <h3 class="text-xl font-bold mb-2">Free Shelter</h3>
+      <p class="text-gray-200">Safe homes for orphans, elderly, and people in need.</p>
+    </div>
+    <div class="mission-item" data-aos="fade-up" data-aos-delay="200">
+      <div class="text-green-400 text-4xl mb-4">📚</div>
+      <h3 class="text-xl font-bold mb-2">Education</h3>
+      <p class="text-gray-200">Quality education and vocational training for all.</p>
+    </div>
+    <div class="mission-item" data-aos="fade-up" data-aos-delay="300">
+      <div class="text-blue-400 text-4xl mb-4">💊</div>
+      <h3 class="text-xl font-bold mb-2">Healthcare</h3>
+      <p class="text-gray-200">Free medical facilities and health checkups.</p>
+    </div>
+    <div class="mission-item" data-aos="fade-up" data-aos-delay="400">
+      <div class="text-purple-400 text-4xl mb-4">💼</div>
+      <h3 class="text-xl font-bold mb-2">Employment</h3>
+      <p class="text-gray-200">Creating sustainable jobs and livelihoods.</p>
+    </div>
+    <div class="mission-item" data-aos="fade-up" data-aos-delay="500">
+      <div class="text-pink-400 text-4xl mb-4">🌍</div>
+      <h3 class="text-xl font-bold mb-2">Global Community</h3>
+      <p class="text-gray-200">Connecting supporters, followers, and volunteers worldwide.</p>
+    </div>
   </div>
 </section>
 
@@ -125,6 +161,7 @@
   <div class="bg-black/90 rounded-xl max-w-3xl w-full p-6 relative text-white shadow-2xl">
     <button id="closeFormBtn" class="absolute top-4 right-4 text-white text-2xl font-bold">&times;</button>
     <h2 class="text-2xl font-bold mb-4">Join Gulab Seva Foundation</h2>
+    <p class="mb-4">Fill the form below to register and receive priority access.</p>
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeebYaMijDqqldG-UT1QiZq668VAK9w-Ck4uh_U0o1MjWpMgA/viewform?embedded=true" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
   </div>
 </div>
@@ -143,53 +180,47 @@
 </footer>
 
 <script>
+// Initialize AOS
+document.addEventListener('DOMContentLoaded', () => { AOS.init({ duration: 1000, once: true, offset: 100 }); });
+
 // Open / Close Modal
 const openBtn = document.getElementById('openFormBtn');
-const openBtn2 = document.getElementById('openFormBtn2');
 const closeBtn = document.getElementById('closeFormBtn');
 const modal = document.getElementById('formModal');
 openBtn.addEventListener('click', () => modal.classList.remove('hidden'));
-openBtn2.addEventListener('click', () => modal.classList.remove('hidden'));
 closeBtn.addEventListener('click', () => modal.classList.add('hidden'));
-window.addEventListener('click', (e) => { if (e.target === modal) modal.classList.add('hidden'); });
+modal.addEventListener('click', (e) => { if(e.target===modal) modal.classList.add('hidden'); });
 
-// Mobile Menu Toggle
+// Navbar Mobile Menu
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 const mobileMenu = document.getElementById('mobileMenu');
 mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
-// Mobile Join Button
+// Navbar Join Buttons
+const navJoinBtn = document.getElementById('navJoinBtn');
 const mobileJoinBtn = document.getElementById('mobileJoinBtn');
+navJoinBtn.addEventListener('click', () => modal.classList.remove('hidden'));
 mobileJoinBtn.addEventListener('click', () => modal.classList.remove('hidden'));
 
 // Floating Join Button
 const floatingJoinBtn = document.getElementById('floatingJoinBtn');
 floatingJoinBtn.addEventListener('click', () => modal.classList.remove('hidden'));
 
-// Show floating bar after scrolling 300px
-const floatingBar = document.getElementById('floatingBar');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) floatingBar.classList.add('opacity-100');
-  else floatingBar.classList.remove('opacity-100');
-});
+// Floating Bar Fade In
+window.addEventListener('load', () => { document.getElementById('floatingBar').classList.add('opacity-100'); });
 
-// Initialize AOS
-AOS.init({ duration: 1000, once: true });
-
-// Initialize Particles.js
+// Initialize Particles
 particlesJS('particles-js', {
-  particles: {
-    number: { value: 50, density: { enable: true, value_area: 800 } },
-    color: { value: "#0AB6BC" },
-    shape: { type: "circle" },
-    opacity: { value: 0.3 },
-    size: { value: 3, random: true },
-    line_linked: { enable: true, distance: 150, color: "#0AB6BC", opacity: 0.2, width: 1 },
-    move: { enable: true, speed: 1.5, direction: "none", random: true, straight: false }
+  "particles": { "number": { "value":40,"density":{"enable":true,"value_area":800} },
+    "color":{"value":"#0AB6BC"}, "shape":{"type":"circle"},
+    "opacity":{"value":0.3,"random":true}, "size":{"value":3,"random":true},
+    "line_linked":{"enable":true,"distance":150,"color":"#0AB6BC","opacity":0.2,"width":1},
+    "move":{"enable":true,"speed":1,"direction":"none","random":true,"straight":false,"out_mode":"out"}
   },
-  interactivity: { detect_on: "canvas", events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" } } },
-  retina_detect: true
+  "interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":false},"onclick":{"enable":false},"resize":true}},
+  "retina_detect":true
 });
 </script>
+
 </body>
 </html>
