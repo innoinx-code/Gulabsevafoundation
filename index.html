@@ -11,6 +11,11 @@
 <!-- AOS Library for scroll animations -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  AOS.init({ duration: 1000, once: false, mirror: true, offset: 100 });
+});
+</script>
 
 <!-- Particle.js CDN -->
 <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
@@ -84,13 +89,9 @@
 <!-- Hero Section -->
 <section class="h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden hero-bg">
   <div id="particles-js" class="absolute inset-0 -z-20"></div>
-  <h1 class="text-4xl md:text-6xl font-bold mb-4" data-aos="fade-up">Join the Gulab Seva Mission</h1>
+  <h1 class="text-4xl md:text-6xl font-bold mb-4" data-aos="fade-up">Welcome to Gulab Seva Foundation</h1>
   <p class="text-lg md:text-2xl mb-8 text-gray-200" data-aos="fade-up" data-aos-delay="200">
-    What if tomorrow you lost everything — who would stand by you?<br>
-    Millions in India face this reality: orphans with no home, elderly with no family, youth without jobs, and families sleeping on streets.
-  </p>
-  <p class="text-lg md:text-2xl mb-8 text-gray-200" data-aos="fade-up" data-aos-delay="300">
-    Now, something powerful has begun — The Gulab Seva Foundation. Join the first 2 crore people to receive their official GSF ID and priority access to all future benefits.
+    We’re on a mission to build a new India — where everyone gets a job, a home, education, and dignity.
   </p>
   <div class="flex flex-col md:flex-row gap-6 justify-center items-center mt-8 relative animate-pulse-slow" data-aos="zoom-in" data-aos-delay="400">
     <a href="https://instagram.com/gulabsevafoundation" target="_blank" class="social-btn">Instagram</a>
@@ -102,56 +103,62 @@
       Join Now
     </button>
   </div>
+  <div class="absolute bottom-6 flex flex-col items-center animate-bounce">
+    <span class="text-white text-sm mb-1">Scroll Down</span>
+    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </div>
 </section>
 
-<!-- About / Mission / Vision / What We Do Sections -->
+<!-- About / Mission / Vision Sections -->
 <section class="py-16 px-6 max-w-6xl mx-auto text-center">
 
-  <!-- About -->
   <h2 class="section-title" data-aos="fade-right">About Gulab Seva Foundation</h2>
   <p class="section-text" data-aos="fade-left" data-aos-delay="100">
-    Gulab Seva Foundation is dedicated to building a world where every person—whether jobless, orphaned, elderly, or in need—receives shelter, education, healthcare, and livelihood. Our vision: gather 2 crore followers who get priority access to all programs, building a self-sustaining society for all.
+    Gulab Seva Foundation is a registered charitable trust dedicated to helping orphans, elderly, jobless youth, and families in need. Our goal is to ensure shelter, education, healthcare, and livelihoods for all. The first 2 Crore followers will receive a unique GSF ID granting priority access to future benefits.
   </p>
 
-  <!-- Mission -->
   <h2 class="section-title mt-12" data-aos="fade-right" data-aos-delay="200">Our Mission</h2>
   <p class="section-text" data-aos="fade-left" data-aos-delay="300">
-    Eliminate poverty, unemployment, and lack of basic necessities by providing free homes, education, jobs, and healthcare. Empowering individuals and families to achieve stability and dignity.
+    Build a self-sustaining society where no one sleeps hungry, every child is educated, and every individual has the dignity of life. Programs focus on free jobs, homes, healthcare, and education.
   </p>
 
-  <!-- Vision -->
   <h2 class="section-title mt-12" data-aos="fade-right" data-aos-delay="400">Our Vision</h2>
   <p class="section-text" data-aos="fade-left" data-aos-delay="500">
-    A world where no one sleeps hungry, every child is educated, and every individual lives with dignity. First 2 crore followers receive unique GSF IDs symbolizing trust, belonging, and priority access.
+    Create a world of trust, unity, and humanity — where the first 2 Crore members of Gulab Seva Foundation form the core community that drives real change.
   </p>
 
-  <!-- What We Do -->
-  <h2 class="section-title mt-12" data-aos="fade-right" data-aos-delay="600">What We Do</h2>
+</section>
+
+<!-- Mission Cards -->
+<section class="py-16 px-6 max-w-6xl mx-auto text-center">
+  <h2 class="section-title" data-aos="fade-right">What We Do</h2>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
     <div class="mission-item" data-aos="fade-up" data-aos-delay="100">
       <div class="text-teal-400 text-4xl mb-4">🏠</div>
       <h3 class="text-xl font-bold mb-2">Free Shelter</h3>
-      <p class="text-gray-200">Safe homes for orphans, elderly, and people in need.</p>
+      <p class="text-gray-200">Providing safe homes to orphans, elderly, and families in need.</p>
     </div>
     <div class="mission-item" data-aos="fade-up" data-aos-delay="200">
-      <div class="text-green-400 text-4xl mb-4">📚</div>
+      <div class="text-green-400 text-4xl mb-4">🎓</div>
       <h3 class="text-xl font-bold mb-2">Education</h3>
-      <p class="text-gray-200">Quality education and vocational training for all.</p>
+      <p class="text-gray-200">Ensuring access to schools and vocational training for every child.</p>
     </div>
     <div class="mission-item" data-aos="fade-up" data-aos-delay="300">
       <div class="text-blue-400 text-4xl mb-4">💊</div>
       <h3 class="text-xl font-bold mb-2">Healthcare</h3>
-      <p class="text-gray-200">Free medical facilities and health checkups.</p>
+      <p class="text-gray-200">Providing medical facilities and free health checkups to all.</p>
     </div>
     <div class="mission-item" data-aos="fade-up" data-aos-delay="400">
       <div class="text-purple-400 text-4xl mb-4">💼</div>
       <h3 class="text-xl font-bold mb-2">Employment</h3>
-      <p class="text-gray-200">Creating sustainable jobs and livelihoods.</p>
+      <p class="text-gray-200">Creating sustainable jobs and livelihood opportunities.</p>
     </div>
     <div class="mission-item" data-aos="fade-up" data-aos-delay="500">
       <div class="text-pink-400 text-4xl mb-4">🌍</div>
       <h3 class="text-xl font-bold mb-2">Global Community</h3>
-      <p class="text-gray-200">Connecting supporters, followers, and volunteers worldwide.</p>
+      <p class="text-gray-200">Building a network of supporters, followers, and volunteers worldwide.</p>
     </div>
   </div>
 </section>
@@ -176,13 +183,10 @@
 
 <!-- Footer -->
 <footer class="py-6 text-center border-t border-gray-700 mt-12" data-aos="fade-up">
-  <p>© 2025 Gulab Seva Foundation</p>
+  <p>© 2025 Gulab Seva Foundation | All Rights Reserved</p>
 </footer>
 
 <script>
-// Initialize AOS
-document.addEventListener('DOMContentLoaded', () => { AOS.init({ duration: 1000, once: true, offset: 100 }); });
-
 // Open / Close Modal
 const openBtn = document.getElementById('openFormBtn');
 const closeBtn = document.getElementById('closeFormBtn');
